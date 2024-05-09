@@ -1,0 +1,286 @@
+.full-body{
+  height: 100vh;
+    width:100%;
+    background:linear-gradient(to right, #ff8a00, #da1b60, #ff8a00, #da1b60, #ff8a00, #da1b60);
+    position: relative;
+    margin: 0 auto;
+}
+.fluid{
+  height: 100vh;
+    width: 80%;
+    background-color: rgb(242, 240, 240);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    transition: box-shadow 0.3s ease;
+    padding-top: 20px;
+    margin: 0 auto;
+
+}
+
+.fluid:hover {
+    box-shadow: 0 0 20px white, inset 0 0 10px rgba(0, 255, 255, 0.2);  
+
+}
+.head{
+    height:10vh;
+    width:90%;
+    font-size: 20px;
+
+}
+
+.chat-box{
+    height: 80vh;
+    width: 100%;
+    margin:0 auto;
+    position: relative;
+    
+}
+.start-box{
+  height: 72vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+img{
+    height: 100px;
+    width: 100px;
+    background-size: 100% 100%;
+    border-radius: 50%;
+}
+
+.question-box{
+    height: 10vh;
+    width:100%;
+    display: flex;
+    padding:5px;
+    margin: 0% 2.5%;
+}
+
+input{
+    height: 58px;
+    width:93%;
+    background-color:rgb(242, 240, 240) ;
+    font-size: 20px;
+    border-radius: 0px;
+    border:0px;
+}
+
+input:focus {
+  outline: none;
+  border-color: initial;
+  box-shadow: none;
+  background-color:rgb(242, 240, 240);
+  
+}
+.textBox{
+  border:1px solid #bebebe;
+}
+i{
+  height:58px;
+  width: 7%;
+  padding-top:15px;
+  background-color:rgb(242, 240, 240) ;
+  
+
+
+}
+.fa{
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+.box{
+  position: relative;
+  left: 0;
+}
+.qna-box {
+  height: 70vh;
+  width:280px;
+    position: absolute;
+    background-color: rgb(56, 56, 56);
+    color:white;
+    transition: 15s ease;
+    box-shadow: 5px 2px 5px rgb(199, 199, 199), 5px 5px 5px rgb(0, 0, 0) ;
+  }
+
+  .questions {
+    overflow-y: auto;
+    max-height: 300px; /* Adjust as needed */
+  }
+  .question {
+    cursor: pointer;
+     padding: 10px;
+    border-radius: 8px;
+    clear: both;
+    float: left;
+    width: 90%;
+  }
+  
+  .close-btn {
+    margin-top: 10px;
+  }
+  
+
+  .message{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    height: 72vh;
+
+  }
+  ::-webkit-scrollbar{
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track{
+    background-color: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb{
+    background: #dfdfdf;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+    background: #8f8f8f;
+  }
+
+  .chat-message {
+    padding: 8px 12px;
+    margin: 8px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    clear: both;
+}
+
+.answer {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 8px;
+    clear: both;
+    float: right;
+    width: 90%;
+  }
+  
+  .loading {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+    clear: both;
+    float: right;
+    width: 90%;
+    color:#737373
+  }  
+
+  .ring{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    animation: ring 2s linear infinite;
+  }
+
+  @keyframes ring{
+    0%{
+        transform:rotate(0deg);
+        box-shadow: 1px 1px 1px #e65c00;
+    }
+    50%{
+        transform:rotate(180deg);
+        box-shadow: 1px 1px 1px #18b201;
+    }
+    100%{
+        transform:rotate(360deg);
+        box-shadow: 1px 1px 1px #0456c8;
+    }
+
+
+  }
+
+  .ring:before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba (255,255,255,.3);
+  }
+  .outgoing {
+    background-color: #dcf8c6;
+    max-width: 50%;
+    text-align: center;
+    border-radius: 0px 10px 10px 10px ;
+    margin:1% 1% 1% 2% ;
+    border-left: 1px solid #555;
+    border-top:1px solid #555;
+    box-shadow: 0px 5px 5px  #555;
+  }
+
+.round{
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color:  #dcf8c6 ;
+  border: 1px solid #555;
+}
+.top{
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .fluid {
+    width: 90%;
+  }
+
+  .start-box {
+    padding: 20px;
+  }
+
+  .img {
+    max-width: 80px;
+  }
+}
+
+@media (max-width: 576px) {
+  .fluid {
+    width: 100%;
+  }
+
+  .head {
+    font-size: 14px;
+  }
+  small{
+    display: none;
+  }
+
+  .img {
+    max-width: 60px;
+  }
+}
+@media (max-width: 400px) {
+  .fluid {
+    width: 100%;
+  }
+  .top{
+    flex-direction: column;
+  }
+
+  .head {
+    font-size: 12px;
+    height: 45px;
+  }
+
+  .img {
+    max-width: 40px;
+  }
+  .qna {
+    display: flex;
+    justify-content: space-between; /* Align items to left and right */
+    margin-top: 10px; /* Adjust margin as needed */
+  }
+
+  .qna button {
+    margin-right: 15px; /* Add margin to button for spacing */
+  }
+
+  .chat-box{
+    height: 60vh;
+  }
+  .start-box{
+    height: 55vh;
+  }
+}

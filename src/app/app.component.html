@@ -1,0 +1,39 @@
+<div class="full-body">
+  <div class="fluid" #fluidRef>
+    <div class="top">
+      <div class="head container-fluid"><b style="font-size: 30px;">Tylt AI Chat Service</b> <small> (know about your cab )</small> </div>
+      <input type="color" style="float: right;height:20px;width:50px;margin-top:16px;margin-right: 15px;" id="changeColor" [(ngModel)]="selectedColor" (ngModelChange)="changeColor()">
+      <div class="qna"><button class="btn btn-outline-success" style="height: 50px; width:150px;margin-right:15px" (click)="toggleChat()">Asked Questions</button></div>
+    </div>
+    <div class="chat-box">
+      <div *ngIf="chatVisible" class="box" >
+        <div class="qna-box container">
+          <button class="close-btn" (click)="closeBox()" style="float: right;background-color:rgb(56, 56, 56);color: chocolate;outline: 0;border:0;">X</button>
+          <div class="questions">
+            <div class="question" *ngFor="let question of questions" (click)="selectQuestion(question)">{{ question }}</div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!selectedQuestion" class="d-flex justify-content-center align-items-center start-box">
+        <img src="https://stimg.cardekho.com/images/cms/carnewsimages/editorimages/63f5cd0e127e3.png">
+        <b style="font-size: 40px;">How can we help you?</b>
+      </div>
+      <div *ngIf="selectedQuestion" class="message">
+        <div class="chat-message" *ngFor="let item of questionsAndAnswers">
+          <div class="round"></div>
+          <div class="outgoing">{{ item.question }}</div>
+          <br>
+          <div class="answer" *ngIf="!item.loading">{{ item.answer }}</div>
+          <div class="loading ring" *ngIf="item.loading"></div>
+          <br>
+          <br>
+        </div>
+      </div>
+      <div class="question-box form-group">
+        <div style="width: 95%;height: 60px; margin-right: 8px;display: flex;" class="textBox"><input  type="text" id="inputQuestion" class="form-control" placeholder="Add your question here" ><i class="fa fa-toggle-right" (click)="generateAnswer()" style="text-align: center;margin-left:0px ;"></i></div>
+        <!-- <div style="width: 8%;"><button class="btn btn-dark" style="height: 60px;" (click)="generateAnswer()"><i class="fa fa-toggle-right"></i></button></div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
